@@ -1,3 +1,5 @@
+import copy
+
 # Sum of two number in an array
 
 # O(n^2) time | O(1) space
@@ -48,6 +50,39 @@ def twoNumberSum4(arr, sum):
         elif currentSum > sum:
             right -= 1
     return []
+
+
+# Return index of the number
+
+def twoSum(nums, target):
+    left = 0
+    right = len(nums) - 1
+    list1 = nums
+    nums.sort()
+    while left < right:
+        if nums[left] + nums[right] == target:
+            return [list1.index(nums[left]), list1.index(nums[right])]
+        elif nums[left] + nums[right] > target:
+            right = right - 1
+        elif nums[left] + nums[right] < target:
+            left = left + 1
+    return []
+
+
+def twoSum2(nums, target):
+    dict1 = {}
+    for num in range(len(nums)):
+        check = target - nums[num]
+        if str(check) in dict1.keys():
+            return [dict1[str(check)], num]
+        else:
+            dict1[str(nums[num])] = num
+    return []
+
+
+print(twoSum([3, 2, 4], 6))
+
+print(twoSum([3, 3], 6))
 
 
 print(twoNumberSum1([4, 6], 10))
