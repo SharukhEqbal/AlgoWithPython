@@ -57,7 +57,7 @@ def twoNumberSum4(arr, sum):
 def twoSum(nums, target):
     left = 0
     right = len(nums) - 1
-    list1 = nums
+    list1 = copy.copy(nums)
     nums.sort()
     while left < right:
         if nums[left] + nums[right] == target:
