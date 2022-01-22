@@ -13,3 +13,10 @@ Sum of digits:
                   when int(x/10) == 0 we can return it e.g. 1/10 == 0
   Constraint case:
                   number needs to be positive
+
+
+Similarly for power
+  recursive flow:  2^3= 2*2*2 = 2*2^(3-1)     f(x^n) = x * x^(n-1) = x * f(x^(n-1))
+  base condition: 2^0 = 1 or 1^1 = 1 so either x == 1 or n == 0 
+  constraint case: exp needs to be positive
+  
